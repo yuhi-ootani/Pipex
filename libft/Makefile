@@ -6,7 +6,7 @@
 #    By: oyuhi <oyuhi@student.42tokyo.jp>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/26 13:46:22 by oyuhi             #+#    #+#              #
-#    Updated: 2025/01/17 12:33:23 by oyuhi            ###   ########.fr        #
+#    Updated: 2025/01/18 10:00:34 by oyuhi            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,6 @@ SRCS = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c f
 		
 
 OBJ_DIR = objs
-OBJS = $(SRCS:.c=.o)
 OBJS = $(SRCS:%.c=$(OBJ_DIR)/%.o)
 
 all: $(NAME) 

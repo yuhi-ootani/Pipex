@@ -6,7 +6,7 @@
 /*   By: oyuhi <oyuhi@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 15:41:30 by otaniyuhi         #+#    #+#             */
-/*   Updated: 2025/01/12 09:38:14 by oyuhi            ###   ########.fr       */
+/*   Updated: 2025/01/18 09:53:17 by oyuhi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,83 +91,83 @@ int	ft_printf(const char *format, ...)
 	return (count);
 }
 
-#include <stdio.h>
+// #include <stdio.h>
 
-int	main(void)
-{
-	char	*null_str;
-	int		x;
+// int	main(void)
+// {
+// 	char	*null_str;
+// 	int		x;
 
-	int ret_printf, ret_ft_printf;
-	//
-	// Test 1: Simple string
-	printf("Test 1: Simple String\n");
-	ret_ft_printf = ft_printf("ft_printf: Test 1: Hello, World!\n");
-	ret_printf = printf("printf:    Test 1: Hello, World!\n");
-	printf("Return ft_printf: %d\n", ret_ft_printf);
-	printf("Return printf:    %d\n\n", ret_printf);
-	//
-	// Test 2: Characters
-	printf("Test 2: Characters\n");
-	ret_ft_printf = ft_printf("ft_printf: Test 2: Characters: %c %c %c\n", 'A',
-			'b', '3');
-	ret_printf = printf("printf:    Test 2: Characters: %c %c %c\n", 'A', 'b',
-			'3');
-	printf("Return ft_printf: %d\n", ret_ft_printf);
-	printf("Return printf:    %d\n\n", ret_printf);
-	//
-	// Test 3: Strings
-	printf("Test 3: Strings\n");
-	null_str = NULL;
-	ret_ft_printf = ft_printf("ft_printf: Test 3: Strings: %s %s %s\n", "Hello",
-			"ft_printf", null_str);
-	ret_printf = printf("printf:    Test 3: Strings: %s %s %s\n", "Hello",
-			"ft_printf", null_str);
-	printf("Return ft_printf: %d\n", ret_ft_printf);
-	printf("Return printf:    %d\n\n", ret_printf);
-	//
-	// Test 4: Pointers
-	printf("Test 4: Pointers\n");
-	x = 42;
-	ret_ft_printf = ft_printf("ft_printf: Test 4: Pointers: %p %p %p\n", &x,
-			NULL, (void *)0x12345678);
-	ret_printf = printf("printf:    Test 4: Pointers: %p %p %p\n", &x, NULL,
-			(void *)0x12345678);
-	printf("Return ft_printf: %d\n", ret_ft_printf);
-	printf("Return printf:    %d\n\n", ret_printf);
-	//
-	// Test 5: Integers
-	printf("Test 5: Integers\n");
-	ret_ft_printf = ft_printf("ft_printf: Test 5: Integers: %d %i %d\n", 0, -42,
-			2147483647);
-	ret_printf = printf("printf:    Test 5: Integers: %d %i %d\n", 0, -42,
-			2147483647);
-	printf("Return ft_printf: %d\n", ret_ft_printf);
-	printf("Return printf:    %d\n\n", ret_printf);
-	//
-	// Test 6: Unsigned Integers
-	printf("Test 6: Unsigned Integers\n");
-	ret_ft_printf = ft_printf("ft_printf: Test 6: Unsigned: %u %u %u\n", 0,
-			4294967295U, 123456789);
-	ret_printf = printf("printf:    Test 6: Unsigned: %u %u %u\n", 0,
-			4294967295U, 123456789);
-	printf("Return ft_printf: %d\n", ret_ft_printf);
-	printf("Return printf:    %d\n\n", ret_printf);
-	//
-	// Test 7: Hexadecimal
-	printf("Test 7: Hexadecimal\n");
-	ret_ft_printf = ft_printf("ft_printf: Test 7: Hexadecimal: %x %X %x\n", 255,
-			255, 0);
-	ret_printf = printf("printf:    Test 7: Hexadecimal: %x %X %x\n", 255, 255,
-			0);
-	printf("Return ft_printf: %d\n", ret_ft_printf);
-	printf("Return printf:    %d\n\n", ret_printf);
-	//
-	// Test 8: Percent Sign
-	printf("Test 8: Percent Sign\n");
-	ret_ft_printf = ft_printf("ft_printf: Test 8: Percent: %% %% %%\n");
-	ret_printf = printf("printf:    Test 8: Percent: %% %% %%\n");
-	printf("Return ft_printf: %d\n", ret_ft_printf);
-	printf("Return printf:    %d\n\n", ret_printf);
-	return (0);
-}
+// 	int ret_printf, ret_ft_printf;
+// 	//
+// 	// Test 1: Simple string
+// 	printf("Test 1: Simple String\n");
+// 	ret_ft_printf = ft_printf("ft_printf: Test 1: Hello, World!\n");
+// 	ret_printf = printf("printf:    Test 1: Hello, World!\n");
+// 	printf("Return ft_printf: %d\n", ret_ft_printf);
+// 	printf("Return printf:    %d\n\n", ret_printf);
+// 	//
+// 	// Test 2: Characters
+// 	printf("Test 2: Characters\n");
+// 	ret_ft_printf = ft_printf("ft_printf: Test 2: Characters: %c %c %c\n", 'A',
+// 			'b', '3');
+// 	ret_printf = printf("printf:    Test 2: Characters: %c %c %c\n", 'A', 'b',
+// 			'3');
+// 	printf("Return ft_printf: %d\n", ret_ft_printf);
+// 	printf("Return printf:    %d\n\n", ret_printf);
+// 	//
+// 	// Test 3: Strings
+// 	printf("Test 3: Strings\n");
+// 	null_str = NULL;
+// 	ret_ft_printf = ft_printf("ft_printf: Test 3: Strings: %s %s %s\n", "Hello",
+// 			"ft_printf", null_str);
+// 	ret_printf = printf("printf:    Test 3: Strings: %s %s %s\n", "Hello",
+// 			"ft_printf", null_str);
+// 	printf("Return ft_printf: %d\n", ret_ft_printf);
+// 	printf("Return printf:    %d\n\n", ret_printf);
+// 	//
+// 	// Test 4: Pointers
+// 	printf("Test 4: Pointers\n");
+// 	x = 42;
+// 	ret_ft_printf = ft_printf("ft_printf: Test 4: Pointers: %p %p %p\n", &x,
+// 			NULL, (void *)0x12345678);
+// 	ret_printf = printf("printf:    Test 4: Pointers: %p %p %p\n", &x, NULL,
+// 			(void *)0x12345678);
+// 	printf("Return ft_printf: %d\n", ret_ft_printf);
+// 	printf("Return printf:    %d\n\n", ret_printf);
+// 	//
+// 	// Test 5: Integers
+// 	printf("Test 5: Integers\n");
+// 	ret_ft_printf = ft_printf("ft_printf: Test 5: Integers: %d %i %d\n", 0, -42,
+// 			2147483647);
+// 	ret_printf = printf("printf:    Test 5: Integers: %d %i %d\n", 0, -42,
+// 			2147483647);
+// 	printf("Return ft_printf: %d\n", ret_ft_printf);
+// 	printf("Return printf:    %d\n\n", ret_printf);
+// 	//
+// 	// Test 6: Unsigned Integers
+// 	printf("Test 6: Unsigned Integers\n");
+// 	ret_ft_printf = ft_printf("ft_printf: Test 6: Unsigned: %u %u %u\n", 0,
+// 			4294967295U, 123456789);
+// 	ret_printf = printf("printf:    Test 6: Unsigned: %u %u %u\n", 0,
+// 			4294967295U, 123456789);
+// 	printf("Return ft_printf: %d\n", ret_ft_printf);
+// 	printf("Return printf:    %d\n\n", ret_printf);
+// 	//
+// 	// Test 7: Hexadecimal
+// 	printf("Test 7: Hexadecimal\n");
+// 	ret_ft_printf = ft_printf("ft_printf: Test 7: Hexadecimal: %x %X %x\n", 255,
+// 			255, 0);
+// 	ret_printf = printf("printf:    Test 7: Hexadecimal: %x %X %x\n", 255, 255,
+// 			0);
+// 	printf("Return ft_printf: %d\n", ret_ft_printf);
+// 	printf("Return printf:    %d\n\n", ret_printf);
+// 	//
+// 	// Test 8: Percent Sign
+// 	printf("Test 8: Percent Sign\n");
+// 	ret_ft_printf = ft_printf("ft_printf: Test 8: Percent: %% %% %%\n");
+// 	ret_printf = printf("printf:    Test 8: Percent: %% %% %%\n");
+// 	printf("Return ft_printf: %d\n", ret_ft_printf);
+// 	printf("Return printf:    %d\n\n", ret_printf);
+// 	return (0);
+// }
