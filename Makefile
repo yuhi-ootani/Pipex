@@ -6,20 +6,20 @@
 #    By: oyuhi <oyuhi@student.42tokyo.jp>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/18 09:25:11 by oyuhi             #+#    #+#              #
-#    Updated: 2025/01/18 12:21:43 by oyuhi            ###   ########.fr        #
+#    Updated: 2025/01/19 19:33:12 by oyuhi            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = pipex
 
 CC = cc 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -g -Wall -Wextra -Werror
 
 LIBFT = libft/libft.a
 
 OBJ_DIR = objs
 
-SRCS = pipex.c
+SRCS = pipex.c pipex_helper.c
 OBJS = $(SRCS:%.c=$(OBJ_DIR)/%.o)
 
 all : $(NAME)
