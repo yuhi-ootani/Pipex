@@ -6,14 +6,14 @@
 #    By: oyuhi <oyuhi@student.42tokyo.jp>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/18 09:25:11 by oyuhi             #+#    #+#              #
-#    Updated: 2025/01/19 19:33:12 by oyuhi            ###   ########.fr        #
+#    Updated: 2025/01/19 19:39:29 by oyuhi            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = pipex
 
 CC = cc 
-CFLAGS = -g -Wall -Wextra -Werror
+CFLAGS =  -Wall -Wextra -Werror
 
 LIBFT = libft/libft.a
 
