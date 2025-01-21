@@ -27,6 +27,7 @@ echo -e "${BOLD_CYAN}\n=== pipex result ===${RESET}"
 # Execute the pipex program
 ./pipex "$INPUTFILE" "$CMD1" "$CMD2" "$OUTFILE"
 cat "$OUTFILE"
+echo $?
 
 echo -e "${BOLD_PURPLE}\n=== shell result ===${RESET}"
 # Execute the equivalent shell command
@@ -35,5 +36,5 @@ cat "$OUTFILE"
 
 # Check memory leaks using valgrind
 echo -e "${BOLD_RED}\n=== Memory Leak Check ===${RESET}"
-valgrind --leak-check=full --track-fds=yes --trace-children=yes ./pipex "$INPUTFILE" "$CMD1" "$CMD2" "$OUTFILE" 
+valgrind --leak-check=full --show-leak-kinds=all --track-fds=yes --trace-children=yes ./pipex "$INPUTFILE" "$CMD1" "$CMD2" "$OUTFILE" 
 echo
