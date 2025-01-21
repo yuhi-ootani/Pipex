@@ -26,12 +26,13 @@ OUTFILE="$4"
 echo -e "${BOLD_CYAN}\n=== pipex result ===${RESET}"
 # Execute the pipex program
 ./pipex "$INPUTFILE" "$CMD1" "$CMD2" "$OUTFILE"
+echo "終了コード"$?
 cat "$OUTFILE"
-echo $?
 
 echo -e "${BOLD_PURPLE}\n=== shell result ===${RESET}"
 # Execute the equivalent shell command
 < "$INPUTFILE" $CMD1 | $CMD2 > "$OUTFILE"
+echo "終了コード"$?
 cat "$OUTFILE"
 
 # Check memory leaks using valgrind

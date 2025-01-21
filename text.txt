@@ -1,0 +1,55 @@
+1. 基本機能のテスト
+1-1. シンプルな動作確認
+./pipex infile "ls -l" "wc -l" outfile
+
+1-2. 引数にスペースやオプションがあるコマンド
+./pipex infile "grep foo" "wc -w" outfile
+
+1-3. コマンドに複数の引数
+./pipex infile "ls -la" "grep pipex" outfile
+
+
+
+2. エラー処理のテスト
+2-1. infile (入力ファイル) が存在しない
+./pipex no_such_file "ls" "wc" outfile
+
+2-2. infile に読み取り権限がない
+chmod 000 infile
+./pipex infile "ls" "wc" outfile
+
+2-3. outfile への書き込み権限がない
+chmod 400 outfile
+./pipex infile "ls" "wc" outfile
+
+2-4. ディレクトリに権限がない場合
+mkdir no_write_dir 
+chmod 555 no_write_dir
+./pipex infile "ls -l" "wc -l" no_write_dir/outfile
+
+2-4. コマンドが存在しない (コマンド not found)
+./pipex infile "abcde" "wc -l" outfile
+./pipex infile "abcde" "abbbbb" outfile
+./pipex infile "" "wc -l" outfile
+./pipex infile " " "ls " outfile
+./pipex infile "/" "ls " outfile
+
+2-5. コマンド実行時に使用できないオプション
+./pipex infile "ls --zzz" "wc -l" outfile
+
+2-6. 引数の数が足りない/多すぎる
+# 引数が足りない例(4つ必要なところ、3つしか渡していない)
+./pipex infile "ls -l" outfile
+
+# 引数が多すぎる例(想定外の引数が入っている)
+./pipex infile "ls -l" "wc -l" "echo hello" outfile
+
+
+3 unset PATH した場合 (環境変数 PATH が空/未設定)
+unset PATH
+./pipex infile "ls" "wc -l" outfile
+./pipex infile "/bin/ls" "wc -l" outfile
+unset PATH
+./pipex infile "/usr/bin/grep foo" "wc -w" outfile
+
+
